@@ -14,11 +14,23 @@
 	}
 
 ## my profile
-
+### 取得
 	get /user/:user_id
 
 	response body :
 	{
+	}
+
+### 登録
+	post /user/:user_id
+
+	request body {
+			
+	}
+
+	response body {
+		"status": true or false
+
 	}
 
 ## ログイン
