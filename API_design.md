@@ -4,8 +4,9 @@
 
 	post /user/register
 
-	request body : {
-
+	request body : 
+	{
+		
 	}
 
 	response body : {
@@ -16,20 +17,22 @@
 
 	get /user/:user_id
 
-	response body : {
-		
+	response body :
+	{
 	}
 
 ## ログイン
 
 	post /user/login
 
-	request body : {
-
+	request body : 
+	{
+		"email" : string, 
+		"password": string
 	}
 
 	response body : {
-
+		"status" : bool	// true or false
 	}
 
 ## カテゴリ
