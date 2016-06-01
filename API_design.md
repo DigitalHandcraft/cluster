@@ -6,11 +6,15 @@
 
 	request body : 
 	{
-		
+		メールアドレス(s.iwate-pu)
+		password
+		first.last name
+		公開用の名前
+
 	}
 
 	response body : {
-
+		true or false
 	}
 
 ## my profile
@@ -19,18 +23,25 @@
 
 	response body :
 	{
+		メールアドレス
+		公開の名前
+		名前
+		自分が登録した趣味とそのカテゴリ
+
 	}
 
 ### 登録
 	post /user/:user_id
 
 	request body {
-			
+		カテゴリ名
+		カテゴリid
+	
 	}
 
 	response body {
 		"status": true or false
-
+		
 	}
 
 ## ログイン
@@ -53,6 +64,9 @@
 	get /category
 
 	response body : {
+		カテゴリ名
+		カテゴリid
+		description
 
 	}
 
@@ -61,11 +75,12 @@
 	post /category
 
 	request body : {
-
+		name
+		discription
 	}
 
 	response body : {
-		
+		true or false
 	}
 
 ### 個別取得
@@ -73,7 +88,11 @@
 	get /category/:category_name
 
 	response body : {
-		
+		id
+		name
+		description
+		menmber’s
+		(参加人数)
 	}
 
 ## 興味(趣味)
