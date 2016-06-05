@@ -128,8 +128,8 @@
 
 ### チャンネル作成
 
-	post /channel/
-	// チャンネルを作成したいグループ
+	post /channel/:interest_id/
+	// チャンネルを作成したい趣味のidを指定
 
 	request body : {
 		"channel_name" : string,
