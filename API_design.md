@@ -4,7 +4,7 @@
 
 	post /user/register
 
-	request body : 
+	request body :
 	{
 		"email" : string, // use s.iwate-pu.ac.jp domain
 		"password" : string,
@@ -24,7 +24,7 @@
 	response body :
 	{
 		"email": string,
-		"publish_name" : string,
+		"public_name" : string,
 		"user_name" : string,	// concat(last_name, first_name)
 		"message" : string, // 自己紹介文
 		"registered_interest" : [ // 自分が登録した趣味とそのカテゴリ
@@ -54,9 +54,9 @@
 
 	post /user/login
 
-	request body : 
+	request body :
 	{
-		"email" : string, 
+		"email" : string,
 		"password": string
 	}
 
@@ -81,7 +81,7 @@
 
 	request body : {
 		"category_name" : string,
-		"cateogory_discription" : string
+		"category_description" : string
 	}
 
 	response body : {
@@ -112,7 +112,7 @@
 	response body : {
 		"status" : true or false
 	}
-   
+
 ## チャンネル
 ### 一覧取得
 
@@ -121,7 +121,7 @@
 
 	response body : [ // array
 		"channel_id" : int,
-		"channel_name" : string,	
+		"channel_name" : string,
 		"channel_author" : string
 		"belongs" : true or false 	// そのチャンネルに参加しているかしていないか(true or false)
 	]
@@ -132,7 +132,7 @@
 	// チャンネルを作成したいグループ
 
 	request body : {
-		"channel_name" : string,	
+		"channel_name" : string,
 	}
 
 	response body : {
