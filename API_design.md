@@ -31,10 +31,10 @@
 			{
 				"category_id" : string,
 				"category_name" : string,
-				"interests" : [
+				"interests" : {
 					"interest_id" : int, // 趣味のID
 					"interest_name" : string, // 趣味の名前
-				]
+				}
 			}
 		]
 	}
