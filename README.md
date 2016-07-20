@@ -1,6 +1,19 @@
-# URL design
+# Cluster System
+学内者向けコミュニティ生成システム
 
-## ユーザ登録
+## 動作環境
+
+* Ruby on Rails v4.2.6
+* MySQL
+
+## Gem
+
+* devise
+  * ログイン機能の実装に使用
+
+## API DESIGN
+
+### ユーザ登録
 
     post /user/register
 
@@ -17,8 +30,8 @@
       "status" : bool // true or false
     }
 
-## my profile
-### 取得
+### my profile
+#### 取得
 
     get /user/:user_id
 
@@ -40,7 +53,7 @@
       ]
     }
 
-### 登録
+#### 登録
 
     post /user/:user_id
 
@@ -52,7 +65,7 @@
       "status": true or false
     }
 
-## ログイン
+### ログイン
 
     post /user/login
 
@@ -66,8 +79,8 @@
       "status" : bool // true or false
     }
 
-## カテゴリ
-### 一覧取得
+### カテゴリ
+#### 一覧取得
 
     get /category
 
@@ -77,7 +90,7 @@
       "category_description" : string
     }
 
-### 追加
+##3# 追加
 
     post /category
 
@@ -90,7 +103,7 @@
       "status" : true or false
     }
 
-### 個別取得 (趣味の取得)
+#### 個別取得 (趣味の取得)
 
     get /category/:category_id
 
@@ -101,8 +114,8 @@
       "members" : int   // 参加人数
     }
 
-## 興味(趣味)
-### 登録
+### 興味(趣味)
+#### 登録
 
     post /category/:category_id/
 
@@ -115,8 +128,8 @@
       "status" : true or false
     }
 
-## チャンネル
-### 一覧取得
+### チャンネル
+#### 一覧取得
 
     get /channel/:interest_id/
       // 参加しているチャンネルの場合trueを返す
@@ -128,7 +141,7 @@
       "belongs" : true or false   // そのチャンネルに参加しているかしていないか(true or false)
     ]
 
-### チャンネル作成
+#### チャンネル作成
 
     post /channel/:interest_id/
     // チャンネルを作成したい趣味のidを指定
@@ -141,7 +154,7 @@
       "status" : true or false
     }
 
-### チャンネル参加
+#### チャンネル参加
 
     get /channel/:channel_id/join
 
