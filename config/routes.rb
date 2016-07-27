@@ -1,18 +1,7 @@
 Rails.application.routes.draw do
 
-  get 'categories/index'
-
-  get 'categories/show'
-
-  get 'categories/create'
-
-  get 'categories/new'
-
-  get 'categories/edit'
-
-  get 'categories/update'
-
-  get 'categories/destory'
+  post '/categories/:category_id/'
+  resources 'categories'
 
   get "users/show"
 
