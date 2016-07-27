@@ -72,9 +72,9 @@
 		get /category
 
 		response body : {
-			"category_id" : string,
-			"category_name" : string,
-			"category_description" : string
+			"id" : string,
+			"name" : string,
+			"description" : string
 		}
 
 ### 追加
@@ -82,8 +82,8 @@
 		post /category
 
 		request body : {
-			"category_name" : string,
-			"category_description" : string
+			"name" : string,
+			"description" : string
 		}
 
 		response body : {
@@ -104,7 +104,7 @@
 ## 興味(趣味)
 ### 登録
 
-		post /category/:category_id/
+		post /categories/:category_id/
 
 		request body : {
 			"interest_name" : string,	// 趣味の名前
