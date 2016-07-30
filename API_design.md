@@ -2,7 +2,7 @@
 
 ## ユーザ登録
 
-		post /user/register
+		post /users/register
 
 		request body :
 		{
@@ -20,7 +20,7 @@
 ## my profile
 ### 取得
 
-		get /user/:user_id
+		get /users/:user_id
 
 		response body :
 		{

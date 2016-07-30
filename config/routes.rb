@@ -1,15 +1,13 @@
 Rails.application.routes.draw do
 
-  get 'interests/create'
+  root 'users#show'
 
-  get 'interests/update'
-
-  get 'interests/destroy'
+  resources 'interests', only: [:create, :update, :destroy]
 
   post '/categories/:category_id/' => 'interests#create'
   resources 'categories'
 
-  # get "users/show"
+  get '/users' => 'users#show'
 
   devise_for :users
 
