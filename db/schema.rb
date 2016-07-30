@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160720070236) do
+ActiveRecord::Schema.define(version: 20160730085542) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 20160720070236) do
   add_index "channels", ["hobby_id"], name: "index_channels_on_hobby_id"
   add_index "channels", ["user_id"], name: "index_channels_on_user_id"
 
-  create_table "hobbies", force: :cascade do |t|
+  create_table "interests", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
     t.integer  "category_id"
@@ -39,17 +39,17 @@ ActiveRecord::Schema.define(version: 20160720070236) do
     t.datetime "updated_at",  null: false
   end
 
-  add_index "hobbies", ["category_id"], name: "index_hobbies_on_category_id"
+  add_index "interests", ["category_id"], name: "index_interests_on_category_id"
 
-  create_table "user_hobbies", force: :cascade do |t|
+  create_table "user_interests", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "hobby_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "interest_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "user_hobbies", ["hobby_id"], name: "index_user_hobbies_on_hobby_id"
-  add_index "user_hobbies", ["user_id"], name: "index_user_hobbies_on_user_id"
+  add_index "user_interests", ["interest_id"], name: "index_user_interests_on_interest_id"
+  add_index "user_interests", ["user_id"], name: "index_user_interests_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
 
-  # post '/categories/:category_id/' => '#'
+  get 'interests/create'
+
+  get 'interests/update'
+
+  get 'interests/destroy'
+
+  post '/categories/:category_id/' => 'interests#create'
   resources 'categories'
 
-  get "users/show"
+  # get "users/show"
 
   devise_for :users
 
