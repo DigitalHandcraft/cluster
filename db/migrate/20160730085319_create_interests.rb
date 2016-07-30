@@ -1,6 +1,6 @@
-class CreateHobbies < ActiveRecord::Migration
+class CreateInterests < ActiveRecord::Migration
   def change
-    create_table :hobbies do |t|
+    create_table :interests do |t|
       t.string :name
       t.text :description
       t.references :category, index: true, foreign_key: true

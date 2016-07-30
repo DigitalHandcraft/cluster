@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  post '/categories/:category_id/'
+  # post '/categories/:category_id/' => '#'
   resources 'categories'
 
   get "users/show"
