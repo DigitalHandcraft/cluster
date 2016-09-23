@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 20160730085542) do
   create_table "channels", force: :cascade do |t|
     t.string   "name"
     t.integer  "user_id"
-    t.integer  "hobby_id"
+    t.integer  "interest_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  add_index "channels", ["hobby_id"], name: "index_channels_on_hobby_id"
+  add_index "channels", ["interest_id"], name: "index_channels_on_hobby_id"
   add_index "channels", ["user_id"], name: "index_channels_on_user_id"
 
   create_table "interests", force: :cascade do |t|
