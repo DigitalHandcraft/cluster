@@ -90,21 +90,27 @@
 			"status" : true or false
 		}
 
-### 個別取得 (趣味の取得)
 
-		get /categories/:id
 
-		response body : {
+## 興味(趣味)
+### あるカテゴリに所属する興味(趣味)の取得
+
+		get /categories/:id/interests
+
+		response body : [
+		{
 			"id" : int, 	// 趣味id
 			"name" : string,	// 趣味の名前
 			"description" : string,	// 趣味の概要
 			"members" : int 	// 参加人数
-		}
+		},
+		{ ... },
+		{ ... }
+		]
 
-## 興味(趣味)
-### 登録
+### あるカテゴリに所属する興味(趣味)の登録
 
-		post /categories/:id/
+		post /categories/:id/interests
 
 		request body : {
 			"interest_name" : string,	// 趣味の名前
