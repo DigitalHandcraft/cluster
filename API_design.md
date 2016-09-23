@@ -69,7 +69,7 @@
 ## カテゴリ
 ### 一覧取得
 
-		get /category
+		get /categories
 
 		response body : {
 			"id" : string,
@@ -79,7 +79,7 @@
 
 ### 追加
 
-		post /category
+		post /categories
 
 		request body : {
 			"name" : string,
@@ -92,12 +92,12 @@
 
 ### 個別取得 (趣味の取得)
 
-		get /category/:category_id
+		get /categories/:category_id
 
 		response body : {
-			"interest_id" : int, 	// 趣味id
-			"interest_name" : string,	// 趣味の名前
-			"interest_description" : string,	// 趣味の概要
+			"id" : int, 	// 趣味id
+			"name" : string,	// 趣味の名前
+			"description" : string,	// 趣味の概要
 			"members" : int 	// 参加人数
 		}
 
