@@ -72,7 +72,7 @@
 		get /categories
 
 		response body : {
-			"id" : string,
+			"id" : int,
 			"name" : string,
 			"description" : string
 		}
