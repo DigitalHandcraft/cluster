@@ -124,19 +124,23 @@
 ## チャンネル
 ### 一覧取得
 
-		get /channel/:interest_id/
-	    // 参加しているチャンネルの場合trueを返す
+	get /channels/:interest_id/
+	// 参加しているチャンネルの場合trueを返す
 
-		response body : [ // array
+	response body : [
+		{ 
 			"channel_id" : int,
 			"channel_name" : string,
-			"channel_author" : string
+			"channel_author" : string,
 			"belongs" : true or false 	// そのチャンネルに参加しているかしていないか(true or false)
-		]
+		},
+		{ ... },
+		{ ... }
+	]
 
 ### チャンネル作成
 
-		post /channel/:interest_id/
+		post /channels/:interest_id
 		// チャンネルを作成したい趣味のidを指定
 
 		request body : {
@@ -149,7 +153,7 @@
 
 ### チャンネル参加
 
-		get /channel/:channel_id/join
+		get /channels/:channel_id/join
 
 		response body : {
 			"status" : true or false

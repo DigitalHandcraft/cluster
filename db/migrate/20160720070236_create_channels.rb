@@ -3,7 +3,7 @@ class CreateChannels < ActiveRecord::Migration
     create_table :channels do |t|
       t.string :name
       t.references :user, index: true, foreign_key: true
-      t.references :hobby, index: true, foreign_key: true
+      t.references :interest, index: true, foreign_key: true
 
       t.timestamps null: false
     end

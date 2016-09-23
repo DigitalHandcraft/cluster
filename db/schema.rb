@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730085542) do
+ActiveRecord::Schema.define(version: 20160923160250) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -24,11 +24,11 @@ ActiveRecord::Schema.define(version: 20160730085542) do
     t.string   "name"
     t.integer  "user_id"
     t.integer  "interest_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  add_index "channels", ["interest_id"], name: "index_channels_on_hobby_id"
+  add_index "channels", ["interest_id"], name: "index_channels_on_interest_id"
   add_index "channels", ["user_id"], name: "index_channels_on_user_id"
 
   create_table "interests", force: :cascade do |t|
@@ -40,6 +40,17 @@ ActiveRecord::Schema.define(version: 20160730085542) do
   end
 
   add_index "interests", ["category_id"], name: "index_interests_on_category_id"
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.integer  "user_id"
+    t.integer  "channel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "messages", ["channel_id"], name: "index_messages_on_channel_id"
+  add_index "messages", ["user_id"], name: "index_messages_on_user_id"
 
   create_table "user_interests", force: :cascade do |t|
     t.integer  "user_id"
