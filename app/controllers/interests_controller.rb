@@ -1,6 +1,5 @@
 class InterestsController < ApplicationController
   def create
-
   end
 
   def update
