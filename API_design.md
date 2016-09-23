@@ -82,8 +82,8 @@
 		post /categories
 
 		request body : {
-			"name" : string,
-			"description" : string
+			"category[name]" : string,
+			"category[description]" : string
 		}
 
 		response body : {
@@ -92,7 +92,7 @@
 
 ### 個別取得 (趣味の取得)
 
-		get /categories/:category_id
+		get /categories/:id
 
 		response body : {
 			"id" : int, 	// 趣味id
@@ -104,7 +104,7 @@
 ## 興味(趣味)
 ### 登録
 
-		post /categories/:category_id/
+		post /categories/:id/
 
 		request body : {
 			"interest_name" : string,	// 趣味の名前
