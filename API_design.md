@@ -124,14 +124,14 @@
 ## チャンネル
 ### 一覧取得
 
-	get /channels/:interest_id/
-	// 参加しているチャンネルの場合trueを返す
+	get /interests/:id/channels/
+	//  趣味のidをinputし、outputとしてその趣味が持っているチャンネルの一覧を返す
 
 	response body : [
 		{ 
-			"channel_id" : int,
-			"channel_name" : string,
-			"channel_author" : string,
+			"id" : int,
+			"name" : string,	// チャンネルの名前
+			"author" : string,	// チャンネルの作成者の名前
 			"belongs" : true or false 	// そのチャンネルに参加しているかしていないか(true or false)
 		},
 		{ ... },
@@ -140,21 +140,45 @@
 
 ### チャンネル作成
 
-		post /channels/:interest_id
-		// チャンネルを作成したい趣味のidを指定
+	post /interests/:id/channels
+	// チャンネルを作成したい趣味のidを指定
 
-		request body : {
-			"channel_name" : string,
-		}
+	request body : {
+		"channel_name" : string,
+	}
 
-		response body : {
-			"status" : true or false
-		}
+	response body : {
+		"status" : true or false
+	}
 
 ### チャンネル参加
 
-		get /channels/:channel_id/join
+	get /interests/:id/channels/join
 
-		response body : {
-			"status" : true or false
+	response body : {
+		"status" : true or false
+	}
+
+## チャット関係 (web socketでもserve)
+
+### 一覧取得(チャット履歴を取得)
+
+	get /channels/:id/messages
+
+	response body : [
+		{
+			"id" : int,	// メッセージ(チャット内の誰かの発言)自体のid
+			"body" : string,	// メッセージ本体
+			"user": string,	// 発言したユーザーの名前
+			"created_at" : datetime,	// 発言した日時
+			"updated_at" : datetime	// 更新された日時
 		}
+	]
+
+### 登録 (チャットへの書き込み)	
+
+	post /channels/:id/messages
+
+	request body : {
+		"body": string,	// 書き込み内容
+	}
