@@ -2,18 +2,18 @@ Rails.application.routes.draw do
 
   root 'users#show'
 
-  resources 'interests', only: [:create, :update, :destroy]
 
-  # categories controller 
-  post '/categories/:category_id/' => 'interests#create'
+  # categories controller
+  get '/categories/:id/interests' => 'interests#index'
+  post '/categories/:id/interests' => 'interests#create'
   resources 'categories'
 
-  # users controller 
+  # users controller
   get '/users' => 'users#show'
 
   devise_for :users
 
-  # channels controller 
+  # channels controller
   get '/channels/ind' => 'channels#ind'
   get '/interests/:id/channels' => 'channels#index'
   post '/interests/:id/channels' => 'channels#create'
