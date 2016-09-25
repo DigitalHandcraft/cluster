@@ -211,5 +211,5 @@ URLで指定したidの趣味(チャットルーム)に新たなチャンネル(
 	post /channels/:id/messages
 
 	request body : {
-		"body": string,	// 書き込み内容
+		"message[body]": string,	// 書き込み内容
 	}
