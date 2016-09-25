@@ -4,12 +4,19 @@ Rails.application.routes.draw do
 
   resources 'interests', only: [:create, :update, :destroy]
 
+  # categories controller 
   post '/categories/:category_id/' => 'interests#create'
   resources 'categories'
 
+  # users controller 
   get '/users' => 'users#show'
 
   devise_for :users
+
+  # channels controller 
+  get '/channels/ind' => 'channels#ind'
+  get '/interests/:id/channels' => 'channels#index'
+  post '/interests/:id/channels' => 'channels#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
