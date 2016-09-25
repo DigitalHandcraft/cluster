@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   post '/interests/:id/channels' => 'channels#create'
 
   # messages controller
-  get '/channles/:id/messages' => 'messages#index'
+  get '/channels/:id/messages' => 'messages#index'
   post '/channels/:id/messages' => 'messages#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
