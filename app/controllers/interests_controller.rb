@@ -1,4 +1,6 @@
 class InterestsController < ApplicationController
+  
+  before_action :authenticate_user!
 
   # get /categories/:id/interests
   def index

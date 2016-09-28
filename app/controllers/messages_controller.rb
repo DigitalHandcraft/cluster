@@ -1,4 +1,7 @@
 class MessagesController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     @channel = Channel.find(params[:id])
     @messages = @channel.messages

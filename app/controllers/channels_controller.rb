@@ -1,4 +1,6 @@
 class ChannelsController < ApplicationController
+  
+  before_action :authenticate_user!
 
   def ind
     @channels = Channel.all()
